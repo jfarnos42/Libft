@@ -6,20 +6,20 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:39:58 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/12 15:38:06 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/16 15:09:09 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-void	*ft_memcpy(void *dst, const void *rsrc, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		dst[i] = src[i];
+		(*(char *)(dst + i)) = (*(char *)(src + i));
 		i++;
 	}
 	return (dst);
