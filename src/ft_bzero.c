@@ -6,11 +6,11 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:32:05 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/10 18:00:56 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:37:13 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <./libft.h>
+#include "./libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
