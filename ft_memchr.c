@@ -17,10 +17,10 @@
 	size_t	i;
 	
 	i = 0;
-	while ((char *)(s + i) != '\0' && i < n)
+	while ((*(char *)(s + i)) != '\0' && i < n)
 	{
 		if ((*(char *)(s + i)) == (char)c)
-			return ((void *)&s[i]);
+			return ((void *)s + i);
 		i++;
 	}
 	return(0);
