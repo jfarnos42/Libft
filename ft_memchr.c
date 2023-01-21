@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:04:19 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/17 00:31:59 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/21 14:36:36 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 	size_t	i;
 	
 	i = 0;
-	while ((*(char *)(s + i)) != '\0' && i < n)
+	while (i < n)
 	{
 		if ((*(char *)(s + i)) == (char)c)
-			return ((void *)s + i);
+			return ((void *)&s[i]);
 		i++;
 	}
 	return(0);

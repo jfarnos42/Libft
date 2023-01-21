@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:59:26 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/16 15:34:05 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/21 17:32:30 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	while (*s)
 	{
-		if (*s == (unsigned char)c)
-			return((char *)s);
+		if (*s == (char )c)
+			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
-		return ((char *)(s));
+	if ((char )c == '\0')
+		return ((char *)s);
 	return (0);
 }

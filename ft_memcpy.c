@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:39:58 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/17 00:05:11 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/21 10:40:01 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	
-	while (i < n && n != '\0')
+	if (!dst && !src)
+		return (0);
+	while (i < n)
 	{
-		(*(char *)(dst + i)) = (*(char *)(src + i));
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dst);

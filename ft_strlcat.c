@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:31:29 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/17 00:31:48 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/21 13:37:12 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,22 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	src_len;
-	size_t	dst_len;
-	size_t	n;
+	size_t	i;
+	size_t	dstlen;
+	size_t	srclen;
 
-	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
-	n = dstsize - dst_len - 1;
-	if (n > src_len)
-		n = src_len;
-	ft_memcpy(dst + dst_len, src, n);
-	dst[dst_len + n] = '\0';
-	return (dst_len + src_len);
-}
+	i = 0;
+	dstlen = ft_strlen(dst);
+	srclen = ft_strlen(src);
+	if (!dstsize)
+		return(srclen);
+	if (dstlen > dstsize)
+		return (srclen + dstsize);
+	while (src[i] && dstlen + i < dstsize - 1)
+	{
+		dst[dstlen + i] = src[i];
+		i++;
+	}
+	dst[dstlen + i] = '\0';
+	return (srclen + dstlen);
+} 
