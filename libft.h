@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:01:55 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/21 19:14:56 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/25 21:04:17 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlen(const char *s);
 
-char	*strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 int	ft_isalnum(int c);
 
@@ -59,5 +59,9 @@ int	ft_toupper(int c);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int ft_atoi(const char *c);
+
+void	*ft_calloc(size_t count, size_t size);
+
+char	*ft_strdup(const char *s1);
 
 #endif

@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 19:09:05 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/25 19:48:42 by jfarnos-         ###   ########.fr       */
+/*   Created: 2023/01/25 18:56:39 by jfarnos-          #+#    #+#             */
+/*   Updated: 2023/01/25 19:31:30 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned int		i;
-	unsigned int		j;
+	void	*ptr;
 
-	if (needle[0] == '\0')
-		return ((char *)haystack);
-	i = 0;
-	while (haystack[i] && i < len)
-	{
-		j = 0;
-		while (i + j < len && haystack[i + j] == needle[j])
-		{
-			j++;
-			if (!needle[j])
-				return ((char *)&haystack[i]);
-		}
-		i++;
-	}
-	return (0);
+	ptr = malloc(count * size);
+	if (ptr == '\0')
+		return (ptr);
+	ft_bzero(ptr, size * count);
+	return (ptr);
 }
