@@ -20,7 +20,7 @@
 	while (i < n)
 	{
 		if ((*(char *)(s + i)) == (char)c)
-			return ((void *)&s[i]);
+			return ((void *)(s + i));
 		i++;
 	}
 	return(0);
