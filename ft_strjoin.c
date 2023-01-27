@@ -1,34 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 16:51:04 by jfarnos           #+#    #+#             */
-/*   Updated: 2023/01/27 18:01:48 by jfarnos-         ###   ########.fr       */
+/*   Created: 2023/01/27 16:35:51 by jfarnos-          #+#    #+#             */
+/*   Updated: 2023/01/27 16:36:40 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *c)
-{
-	int	i;
-	int	sign;
-	int	res;
-
-	i = 0;
-	sign = 1;
-	res = 0;
-	while (c[i] == ' ' || (c[i] >= 9 && c[i] <= 13))
-		i++;
-	if (c[i] == '-' || c[i] == '+')
-	{
-		if (c[i++] == '-')
-			sign *= -1;
-	}
-	while (c[i] >= '0' && c[i] <= '9')
-		res = res * 10 + (c[i++] - '0');
-	return (res * sign);
-}
+char *ft_strjoin(char const *s1, char const *s2)

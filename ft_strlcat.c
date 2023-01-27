@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:31:29 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/21 13:37:12 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/27 18:55:17 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
 	if (!dstsize)
-		return(srclen);
+		return (srclen);
 	if (dstlen > dstsize)
 		return (srclen + dstsize);
 	while (src[i] && dstlen + i < dstsize - 1)
@@ -32,4 +32,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	dst[dstlen + i] = '\0';
 	return (srclen + dstlen);
-} 
+}

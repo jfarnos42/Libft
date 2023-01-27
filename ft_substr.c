@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 18:06:26 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/27 18:50:08 by jfarnos-         ###   ########.fr       */
+/*   Created: 2023/01/27 15:48:57 by jfarnos-          #+#    #+#             */
+/*   Updated: 2023/01/27 18:44:34 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_substr(char const *s1, unsigned int start, size_t len)
 {
-	size_t	i;
+	char	*s2;
+	size_t	s1len;
 
-	if (!dst && !src)
+	s1len = ft_strlen(s1);
+	if (s1len < start)
+	{
+		len = 0;
+		start = s1len;
+	}
+	else if ((s1len - start) < len)
+		len = s1len - start;
+	s2 = malloc(sizeof(char) * (len + 1));
+	if (!s2)
 		return (0);
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (src <= dst)
-	{
-		while (len--)
-		{
-			((unsigned char *) dst)[len] = ((unsigned char *)src)[len];
-		}
-	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return (dst);
+	ft_strlcpy(s2, s1 + start, len + 1);
+	return (s2);
 }
+

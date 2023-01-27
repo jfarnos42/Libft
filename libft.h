@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:01:55 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/25 21:04:17 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:11:45 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ int ft_atoi(const char *c);
 void	*ft_calloc(size_t count, size_t size);
 
 char	*ft_strdup(const char *s1);
+
+char	*ft_substr(char const *s1, unsigned int start, size_t len);
 
 #endif
