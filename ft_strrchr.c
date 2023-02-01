@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:23:32 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/01/21 17:21:04 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:01:09 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i >= 0)
 	{
 		if ((char )c == s[i])
-			return ((char*)&s[i]);
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (0);
