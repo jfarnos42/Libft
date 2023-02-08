@@ -6,16 +6,16 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:38:23 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/02/01 22:24:49 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/02/08 20:05:09 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	getFrontCut(const char *s1, const char *set)
+int	getfrontcut(const char *s1, const char *set)
 {
 	int	i;
-	int len;
+	int	len;
 
 	i = 0;
 	len = ft_strlen(s1);
@@ -28,20 +28,20 @@ int	getFrontCut(const char *s1, const char *set)
 	return (i);
 }
 
-int	getEndCut(const char *s1, const char *set)
+int	getendcut(const char *s1, const char *set)
 {
 	int	i;
-	int len;
+	int	len;
 
 	i = 0;
 	len = ft_strlen(s1);
 	while (i < len)
 	{
 		if (ft_strchr(set, s1[len - i - 1]) == 0)
-			break;
+			break ;
 		i++;
 	}
-	return (len -i);
+	return (len - i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -49,12 +49,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*dst;
 	int		fcut;
 	int		ecut;
-	
+
 	if (!s1 || !set)
 		return (0);
-	fcut = getFrontCut(s1, set);
-	ecut = getEndCut(s1, set);
-		if (fcut >= ecut)
+	fcut = getfrontcut(s1, set);
+	ecut = getendcut(s1, set);
+	if (fcut >= ecut)
 		return (ft_strdup(""));
 	dst = malloc(sizeof(char) * (ecut - fcut + 1));
 	if (!dst)
