@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:32:10 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/02/09 01:34:21 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/02/10 00:41:47 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	ft_wrdcount(char const *s, char c)
 	int	i;
 	int	count;
 
+	if (s == NULL)
+		return (-1);
 	i = 0;
 	count = 0;
 	while (s[i])
@@ -38,36 +40,32 @@ static int	ft_wrdlen(char *s, char c)
 	return (i);
 }
 
-// static char	**ft_freematrix(char **array, int i)
-// {
-// 	while (i-- >= 0)
-// 		free (array[i]);
-// 	free (array);
-// 	return (0);
-// }
+static char	**ft_freematrix(char **array, int i)
+{
+	while (i-- > 0)
+		free (array[i]);
+	free (array);
+	return (0);
+}
 
-char	**ft_split(char const *s, char c)
+char	**ft_split2(char const *s, char c, size_t i, size_t len)
 {
 	char	**list;
-	size_t	i;
-	size_t	len;
-	int	save;
+	int		save;
 
-	i = 0;
-	if (s == NULL)
-		return (NULL);
+	save = 0;
 	list = malloc(sizeof(char *) * (ft_wrdcount(s, c) + 1));
 	if (!list)
-		return (0);
-	save = 0;
+		return (NULL);
 	while (s[i])
 	{
 		len = ft_wrdlen((char *)&s[i], c);
 		if (len != 0)
 		{
-			list[save++] = ft_substr(&s[i], 0, len);
-		 	//  if (!list[save])
-			//  	return(ft_freematrix(list, save));
+			list[save] = ft_substr(&s[i], 0, len);
+			if (!list[save])
+				return (ft_freematrix(list, save));
+			save++;
 		}
 		if (len == 0)
 			i++;
@@ -76,4 +74,9 @@ char	**ft_split(char const *s, char c)
 	}
 	list[save] = NULL;
 	return (list);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	return (ft_split2(s, c, 0, 0));
 }
