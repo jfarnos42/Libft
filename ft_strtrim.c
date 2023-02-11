@@ -6,13 +6,13 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:38:23 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/02/08 20:05:09 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:53:46 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	getfrontcut(const char *s1, const char *set)
+static int	getfrontcut(const char *s1, const char *set)
 {
 	int	i;
 	int	len;
@@ -28,7 +28,7 @@ int	getfrontcut(const char *s1, const char *set)
 	return (i);
 }
 
-int	getendcut(const char *s1, const char *set)
+static int	getendcut(const char *s1, const char *set)
 {
 	int	i;
 	int	len;

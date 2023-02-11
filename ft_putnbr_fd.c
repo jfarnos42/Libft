@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 02:30:29 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/02/10 03:03:59 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:51:27 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd((n % 10) + '0', fd);
 }
-
-// int	main(void)
-// {
-// 	int nbr = 125;
-// 	int fd = 1;
-
-// 	ft_putnbr_fd(nbr, fd);
-// }

@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:32:10 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/02/10 00:41:47 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:51:46 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char	**ft_freematrix(char **array, int i)
 	return (0);
 }
 
-char	**ft_split2(char const *s, char c, size_t i, size_t len)
+static char	**ft_split2(char const *s, char c, size_t i, size_t len)
 {
 	char	**list;
 	int		save;
