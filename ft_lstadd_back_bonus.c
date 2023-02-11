@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 05:07:58 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/02/10 05:28:32 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:30:51 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*mylst;
+
 	if (new)
 	{
 		mylst = ft_lstlast(*lst);
