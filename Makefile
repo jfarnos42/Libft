@@ -19,7 +19,7 @@ B_OBJ = $(addprefix ${B_OBJ_DIR}/, ${SRC_BONUS:%.c=%.o})
 
 FLAGS	=	-Wall -Werror -Wextra
 
-all: ${NAME} bonus
+all: ${NAME}
 
 ${OBJ_DIR}/%.o:./%.c
 	@mkdir -p ${OBJ_DIR}

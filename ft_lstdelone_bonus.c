@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 05:30:43 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/02/11 18:31:04 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2023/02/13 13:29:10 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		del(lst->content);
 		free(lst);
 	}
+	lst = NULL;
 }
