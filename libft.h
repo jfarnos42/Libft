@@ -12,10 +12,23 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
+
+# include <fcntl.h>
 # include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE BUFSIZ
+# endif
+
+# if BUFFER_SIZE > 9223372036854775806L /*Double long*/
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+
 
 typedef struct s_list
 {
@@ -60,6 +73,8 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+char	*get_next_line(int fd);
 
 char	*ft_strchr(const char *s, int c);
 

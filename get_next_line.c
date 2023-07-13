@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 //#include <time.h>
 
@@ -101,7 +101,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/* int	main(void)
+/*int	main(void)
 {
  	int fd;
 
@@ -120,4 +120,4 @@ char	*get_next_line(int fd)
 	//printf ("%.2f ds\n", seconds);
 	//system("leaks a.out");
  	return (0);
- } */
+ }*/
