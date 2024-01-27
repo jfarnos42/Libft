@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:01:55 by jfarnos-          #+#    #+#             */
-/*   Updated: 2024/01/13 16:51:27 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2024/01/26 22:37:07 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@
 #  undef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
-
-
 
 typedef struct s_list
 {
@@ -74,8 +72,6 @@ void	*ft_calloc(size_t count, size_t size);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
-char	*get_next_line(int fd);
-
 char	*ft_strchr(const char *s, int c);
 
 char	*ft_strrchr(const char *s, int c);
@@ -96,21 +92,11 @@ char	*ft_itoa(int n);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-char	*ft_strdup_gnl(char *s1);
-
-char	*ft_strjoin_gnl(char *s1, char *s2);
-
-char	*ft_strchr_gnl(char *s, int c);
-
-void	*ft_memcpy_gnl(void *dst, void *src, size_t n);
-
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlen(const char *s);
-
-int		ft_strlen_gnl(char *str);
 
 int		ft_isalnum(int c);
 
@@ -133,5 +119,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *c);
 
 int		ft_lstsize(t_list *lst);
+
+int		ft_strcmp(const char *str1, const char *str2);
+
+double	ft_atof(const char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 01:34:48 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/02/10 00:32:25 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2024/01/14 20:56:40 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_spacecheck(int n)
 }
 
 char	*ft_itoa(int n)
-{	
+{
 	char	*str;
 	int		i;
 

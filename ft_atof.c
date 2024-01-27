@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 16:35:51 by jfarnos-          #+#    #+#             */
-/*   Updated: 2024/01/14 20:56:24 by jfarnos-         ###   ########.fr       */
+/*   Created: 2024/01/26 18:58:38 by jfarnos-          #+#    #+#             */
+/*   Updated: 2024/01/26 23:53:23 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+double	ft_atof(const char *str)
 {
-	char	*dst;
+	double	result;
+	double	decimal;
+	int		sign;
 
-	if (!s1)
-		return (0);
-	if (!s2)
+	result = 0.0;
+	decimal = 0.1;
+	sign = 1;
+	if (*str == '-')
 	{
-		return ((char *)s1);
+		sign = -1;
+		++str;
 	}
-	dst = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!dst)
-		return (0);
-	ft_memcpy(dst, s1, ft_strlen(s1));
-	ft_memcpy(dst + ft_strlen(s1), s2, ft_strlen(s2) + 1);
-	return (dst);
+	while (*++str >= '0' && *str <= '9')
+		result = result * 10.0 + (*str - '0');
+	if (*str == '.')
+	{
+		++str;
+		while (*str >= '0' && *str <= '9')
+		{
+			decimal *= 0.1;
+			result += (*str - '0') * decimal;
+			++str;
+		}
+	}
+	return (result * sign);
 }
