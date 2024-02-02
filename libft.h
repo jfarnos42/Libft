@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:01:55 by jfarnos-          #+#    #+#             */
-/*   Updated: 2024/01/26 22:37:07 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2024/02/02 04:40:32 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	*ft_calloc(size_t count, size_t size);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
+char	*ft_strappend(char *chain, char *block);
+
 char	*ft_strchr(const char *s, int c);
 
 char	*ft_strrchr(const char *s, int c);
@@ -123,5 +125,7 @@ int		ft_lstsize(t_list *lst);
 int		ft_strcmp(const char *str1, const char *str2);
 
 double	ft_atof(const char *str);
+
+long	ft_atol(const char *str);
 
 #endif
