@@ -33,8 +33,8 @@ double	ft_atof(const char *str)
 		++str;
 		while (*str >= '0' && *str <= '9')
 		{
-			decimal *= 0.1;
 			result += (*str - '0') * decimal;
+			decimal *= 0.1;
 			++str;
 		}
 	}
