@@ -17,31 +17,31 @@ B_OBJ_DIR = b_obj
 OBJ	= $(addprefix ${OBJ_DIR}/, ${SRC:%.c=%.o})
 B_OBJ = $(addprefix ${B_OBJ_DIR}/, ${SRC_BONUS:%.c=%.o})
 
-FLAGS	=	-Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 
 all: ${NAME}
 
 ${OBJ_DIR}/%.o:./%.c
 	@mkdir -p ${OBJ_DIR}
-	gcc ${FLAGS} -c $< -o $@
+	@gcc ${FLAGS} -c $< -o $@
 
 ${NAME}: ${OBJ}
-	ar -crs ${NAME} ${OBJ}
+	@ar -crs ${NAME} ${OBJ}
 
 
 ${B_OBJ_DIR}/%.o:./%.c
 	@mkdir -p ${B_OBJ_DIR}
-	gcc ${FLAGS} -c $< -o $@
+	@gcc ${FLAGS} -c $< -o $@
 
 bonus: ${B_OBJ} ${OBJ}
-	ar -crs ${NAME} ${B_OBJ}
+	@ar -crs ${NAME} ${B_OBJ}
 
 clean:
-	rm -rf ${OBJ_DIR}
-	rm -rf ${B_OBJ_DIR}
+	@rm -rf ${OBJ_DIR}
+	@rm -rf ${B_OBJ_DIR}
 
 fclean: clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re: fclean all
 

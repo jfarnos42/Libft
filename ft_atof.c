@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:58:38 by jfarnos-          #+#    #+#             */
-/*   Updated: 2024/01/26 23:53:23 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2024/03/14 00:05:36 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ double	ft_atof(const char *str)
 		++str;
 		while (*str >= '0' && *str <= '9')
 		{
-			decimal *= 0.1;
 			result += (*str - '0') * decimal;
+			decimal *= 0.1;
 			++str;
 		}
 	}
