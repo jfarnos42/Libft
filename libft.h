@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:01:55 by jfarnos-          #+#    #+#             */
-/*   Updated: 2024/03/14 01:06:32 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2024/10/02 07:54:54 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,9 @@
 # include <string.h>
 # include <unistd.h>
 # include <limits.h>
+# include "modules/ft_printf/ft_printf.h"
+# include "modules/get_next_line/get_next_line.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE BUFSIZ
-# endif
-
-# if BUFFER_SIZE > 9223372036854775806L /*Double long*/
-#  undef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
 
 typedef struct s_list
 {
