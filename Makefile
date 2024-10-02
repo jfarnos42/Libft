@@ -1,4 +1,4 @@
-NAME = Libft
+NAME = Libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 DEBUG = -g3 -fsanitize=address
@@ -62,14 +62,12 @@ ${BIN}/%.o: %.c
 clean:
 	@echo
 	@echo "$(YELLOW)Cleaning LIBFT...$(END_LINE)"
-	@echo "$(YELLOW)	Cleaning objects and executables...$(END_LINE)"
 	@echo "$(YELLOW)		Cleaning FT_PRINTF...$(END_LINE)"
 	@echo "$(YELLOW)		Cleaning GET_NEXT_LINE...$(END_LINE)"
 	@$(RM) $(BIN)
 	@${MAKE} -C $(GET_NEXT_LINE) fclean
 	@${MAKE} -C $(FT_PRINTF_DIR) fclean
 	@$(RM) $(NAME) $(FT_PRINTF_LIB) $(GNL_LIB)
-	@echo "$(GREEN)	Objects and executables successfully removed.$(END_LINE)"
 	@echo
 	@echo "$(GREEN)LIBFT object files removed.$(END_LINE)"
 
