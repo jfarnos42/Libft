@@ -6,13 +6,13 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:34:24 by jfarnos-          #+#    #+#             */
-/*   Updated: 2024/10/02 08:27:29 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:29:46 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin_GNL(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*dst;
 
@@ -22,16 +22,16 @@ char	*ft_strjoin_GNL(char *s1, char *s2)
 	{
 		return (s1);
 	}
-	dst = malloc(sizeof(char) * (ft_strlen_GNL(s1) + ft_strlen_GNL(s2) + 1));
+	dst = malloc(sizeof(char) * (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (!dst)
 		return (0);
-	ft_memcpy_GNL(dst, s1, ft_strlen_GNL(s1));
-	ft_memcpy_GNL(dst + ft_strlen_GNL(s1), s2, ft_strlen_GNL(s2) + 1);
+	ft_memcpy_gnl(dst, s1, ft_strlen_gnl(s1));
+	ft_memcpy_gnl(dst + ft_strlen_gnl(s1), s2, ft_strlen_gnl(s2) + 1);
 	free (s1);
 	return (dst);
 }
 
-void	*ft_memcpy_GNL(void *dst, void *src, size_t n)
+void	*ft_memcpy_gnl(void *dst, void *src, size_t n)
 {
 	size_t	i;
 
@@ -46,7 +46,7 @@ void	*ft_memcpy_GNL(void *dst, void *src, size_t n)
 	return (dst);
 }
 
-int	ft_strlen_GNL(char *str)
+int	ft_strlen_gnl(char *str)
 {
 	int	i;
 
@@ -56,7 +56,7 @@ int	ft_strlen_GNL(char *str)
 	return (i);
 }
 
-char	*ft_strchr_GNL(char *s, int c)
+char	*ft_strchr_gnl(char *s, int c)
 {
 	int	i;
 
@@ -72,7 +72,7 @@ char	*ft_strchr_GNL(char *s, int c)
 	return (0);
 }
 
-void	ft_bzero_GNL(void *s, size_t n)
+void	ft_bzero_gnl(void *s, size_t n)
 {
 	size_t	i;
 

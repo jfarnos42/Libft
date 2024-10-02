@@ -1,4 +1,4 @@
-NAME = Libft.a
+NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 DEBUG = -g3 -fsanitize=address
@@ -26,7 +26,7 @@ OBJ	= $(addprefix ${BIN}/, ${LIB_SOURCES:%.c=%.o})
 FT_PRINTF_DIR =	./modules/ft_printf/
 FT_PRINTF_LIB = $(FT_PRINTF_DIR)libftprintf.a
 GET_NEXT_LINE =	./modules/get_next_line/
-GNL_LIB = $(GET_NEXT_LINE)get_nexxt_line.a
+GNL_LIB = $(GET_NEXT_LINE)get_next_line.a
 
 ### COLORS ####
 RED = \033[0;31m
@@ -37,22 +37,13 @@ END_LINE = \033[0m
 
 all: $(NAME) $(FT_PRINTF_LIB) $(GNL_LIB)
 $(NAME): $(OBJ)
-	@echo
-	@echo "$(YELLOW)compiling LIBFT...$(END_LINE)"
 	@ar rcs $@ $^
-	@echo "$(GREEN)LIBFT successfully compiled."
 
 $(FT_PRINTF_LIB):
-	@echo
-	@echo "$(YELLOW)Compiling FT_PRINTF...$(END_LINE)"
 	@$(MAKE) -C $(FT_PRINTF_DIR)
-	@echo "$(GREEN)FT_PRINTF successfully compiled.$(END_LINE)"
 
 $(GNL_LIB):
-	@echo
-	@echo "$(YELLOW)Compiling GNL...$(END_LINE)"
 	@$(MAKE) -C $(GET_NEXT_LINE)
-	@echo "$(GREEN)GNL successfully compiled.$(END_LINE)"
 
 ${BIN}/%.o: %.c
 	@mkdir -p ${BIN}

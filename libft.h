@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:01:55 by jfarnos-          #+#    #+#             */
-/*   Updated: 2024/10/02 07:54:54 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:30:17 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@
 # include <string.h>
 # include <unistd.h>
 # include <limits.h>
-# include "modules/ft_printf/ft_printf.h"
-# include "modules/get_next_line/get_next_line.h"
-
+# include "./modules/ft_printf/ft_printf.h"
+# include "./modules/get_next_line/get_next_line.h"
 
 typedef struct s_list
 {

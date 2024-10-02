@@ -6,7 +6,7 @@
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:41:30 by jfarnos-          #+#    #+#             */
-/*   Updated: 2024/10/02 08:27:20 by jfarnos-         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:36:39 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_update_fd(char *str, int i, int j)
 {
 	char	*aux;
 
-	if (ft_strchr_GNL(str, '\n') == NULL)
+	if (ft_strchr_gnl(str, '\n') == NULL)
 	{
 		if (str)
 			free(str);
@@ -31,7 +31,7 @@ char	*ft_update_fd(char *str, int i, int j)
 	{
 		return (str);
 	}
-	aux = malloc((ft_strlen_GNL(str) - i) + 1);
+	aux = malloc((ft_strlen_gnl(str) - i) + 1);
 	if (!aux)
 		return (NULL);
 	while (str[i] != 0)
@@ -63,13 +63,13 @@ char	*ft_find_end_of_line(char *str)
 	return (aux);
 }
 
-char	*ft_strdup_GNL(char *s1)
+char	*ft_strdup_gnl(char *s1)
 {
 	char	*s2;
 	int		s1len;
 	int		i;
 
-	s1len = ft_strlen_GNL(s1);
+	s1len = ft_strlen_gnl(s1);
 	s2 = (char *)malloc(sizeof(char) * (s1len + 1));
 	if (*s2 == '\0')
 		return (NULL);
@@ -83,36 +83,41 @@ char	*ft_strdup_GNL(char *s1)
 	return (s2);
 }
 
+static int	read_into_buffer(int fd, char **buffer_fd)
+{
+	char	temp[BUFFER_SIZE + 1];
+	int		nbr;
+
+	nbr = read(fd, temp, BUFFER_SIZE);
+	if (nbr > 0)
+	{
+		temp[nbr] = '\0';
+		*buffer_fd = ft_strjoin_gnl(*buffer_fd, temp);
+	}
+	return (nbr);
+}
+
 char	*get_next_line(int fd)
 {
 	static char	*buffer_fd;
-	char		temp[BUFFER_SIZE + 1];
-	int			nbr;
 	char		*line;
+	int			nbr;
 
-	nbr = 1;
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);
+		return (NULL);
 	if (!buffer_fd)
-		buffer_fd = ft_strdup_GNL("");
-	while (nbr > 0 && ft_strchr_GNL(buffer_fd, '\n') == NULL)
-	{
-		ft_bzero_GNL(temp, BUFFER_SIZE + 1);
-		nbr = read(fd, temp, BUFFER_SIZE);
-		if (nbr > 0)
-			buffer_fd = ft_strjoin_GNL(buffer_fd, temp);
-	}
+		buffer_fd = ft_strdup_gnl("");
+	nbr = 1;
+	while (nbr > 0 && !ft_strchr_gnl(buffer_fd, '\n'))
+		nbr = read_into_buffer(fd, &buffer_fd);
 	if (nbr < 0)
 	{
 		free(buffer_fd);
 		buffer_fd = NULL;
-		return (0);
+		return (NULL);
 	}
-	else
-	{
-		line = ft_find_end_of_line(buffer_fd);
-		buffer_fd = ft_update_fd(buffer_fd, 0, 0);
-	}
+	line = ft_find_end_of_line(buffer_fd);
+	buffer_fd = ft_update_fd(buffer_fd, 0, 0);
 	if (!*line)
 	{
 		free(line);
@@ -123,21 +128,21 @@ char	*get_next_line(int fd)
 
 /* int	main(void)
 {
- 	int fd;
+	int fd;
 
- 	fd = open("41 no_nl.txt", O_RDONLY);
- 	char *s;
+	fd = open("41 no_nl.txt", O_RDONLY);
+	char *s;
 	//clock_t start = clock();
- 	while ((s = get_next_line(fd)))
- 	{
+	while ((s = get_next_line(fd)))
+	{
 		printf("===================================\n");
 		printf("RETURN ----> %s", s);
 		printf("===================================\n");
- 		free(s);
- 	}
+		free(s);
+	}
 	printf("RETURN ----> %s", s);
 	//float seconds = (float)(clock() - start) / CLOCKS_PER_SEC;
 	//printf ("%.2f ds\n", seconds);
 	//system("leaks a.out");
- 	return (0);
+	return (0);
  } */
